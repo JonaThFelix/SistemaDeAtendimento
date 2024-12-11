@@ -77,10 +77,16 @@ class AtendimentoApp:
         else:
             print("Preencha todas as informações do atendimento.")
 
+    #Label responsável por armazenar os nomes assim que inseridos/atualizados
+    #Incluir os demais campos
+    
     def update_listbox(self):
         self.listbox.delete(0, tk.END)
         for idx, atendimento in enumerate(self.atendimentos_do_dia, start=1):
-            self.listbox.insert(tk.END, f"Atendimento #{idx}: {atendimento.nome}")
+            self.listbox.insert(tk.END, f"Ficha nº #{idx}: {atendimento.nome}")
+            #Testar nova função com todos os dados na label.
+            #self.listbox.insert(tk.END, f"Ficha nº #{idx}: {atendimento.nome},{atendimento.matricula},{atendimento.data},{atendimento.posto},{atendimento.motivo},{atendimento.departamento}")
+            
 
     def clear_entries(self):
         self.nome_entry.delete(0, tk.END)
